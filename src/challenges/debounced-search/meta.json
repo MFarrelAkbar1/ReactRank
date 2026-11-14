@@ -1,0 +1,9 @@
+{
+  "slug": "debounced-search",
+  "title": "Debounced Search",
+  "difficulty": "Hard",
+  "topics": ["useEffect", "debounce", "race conditions", "async"],
+  "order": 7,
+  "estimatedMinutes": 60,
+  "language": "react"
+}

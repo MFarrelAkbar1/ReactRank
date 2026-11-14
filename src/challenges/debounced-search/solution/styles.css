@@ -1,0 +1,55 @@
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 1.5rem 1rem;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.app {
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.search {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+}
+
+.status {
+  margin: 0.75rem 0;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.error {
+  color: #e11d48;
+}
+
+.results {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+.results li {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.email {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+mark {
+  background: #fde68a;
+  border-radius: 2px;
+  padding: 0 1px;
+}
