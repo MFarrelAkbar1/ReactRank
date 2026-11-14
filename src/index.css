@@ -1,4 +1,38 @@
 @import "tailwindcss";
 
 html, body, #root { height: 100%; }
-body { @apply bg-[#0e141e] text-slate-200; }
+body {
+  @apply bg-[#0e141e] text-slate-200 antialiased;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@utility btn {
+  @apply inline-flex items-center gap-1.5 rounded px-3 py-1.5 text-sm font-medium whitespace-nowrap transition disabled:cursor-not-allowed disabled:opacity-50;
+}
+@utility btn-primary { @apply btn bg-emerald-600 text-white hover:bg-emerald-500; }
+@utility btn-secondary { @apply btn bg-slate-700 text-slate-100 hover:bg-slate-600; }
+@utility btn-danger { @apply btn bg-rose-600 text-white hover:bg-rose-500; }
+@utility btn-ghost { @apply btn text-slate-300 hover:bg-slate-800 hover:text-white; }
+@utility tab { @apply border-b-2 border-transparent px-3 py-2 text-sm whitespace-nowrap text-slate-400 hover:text-slate-200; }
+@utility tab-active { @apply border-emerald-400 text-white; }
+
+/* Markdown (challenge description) */
+.prose-rr { @apply text-sm leading-relaxed text-slate-300; }
+.prose-rr h1 { @apply mb-3 text-xl font-bold text-white; }
+.prose-rr h2 { @apply mt-6 mb-2 text-base font-semibold text-white; }
+.prose-rr h3 { @apply mt-4 mb-2 text-sm font-semibold text-white; }
+.prose-rr p { @apply my-2; }
+.prose-rr ul { @apply my-2 list-disc pl-5; }
+.prose-rr ol { @apply my-2 list-decimal pl-5; }
+.prose-rr li { @apply my-1; }
+.prose-rr code { @apply rounded bg-slate-800 px-1 py-0.5 font-mono text-[0.8rem] text-emerald-300; }
+.prose-rr pre { @apply my-3 overflow-x-auto rounded bg-[#0b1018] p-3 ring-1 ring-slate-800; }
+.prose-rr pre code { @apply bg-transparent p-0 text-slate-200; }
+.prose-rr table { @apply my-3 w-full border-collapse text-left text-xs; }
+.prose-rr th, .prose-rr td { @apply border border-slate-700 px-2 py-1; }
+.prose-rr th { @apply bg-slate-800 text-slate-200; }
+.prose-rr strong { @apply text-white; }
+.prose-rr a { @apply text-emerald-400 underline; }
+
+/* resizable panel handles */
+.resize-handle { @apply w-1.5 bg-slate-800 transition-colors hover:bg-emerald-500/60 data-[separator=active]:bg-emerald-500; }

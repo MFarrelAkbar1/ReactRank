@@ -1,0 +1,9 @@
+{
+  "slug": "step-counter",
+  "title": "Step Counter",
+  "difficulty": "Easy",
+  "topics": ["useState", "events"],
+  "order": 1,
+  "estimatedMinutes": 15,
+  "language": "react"
+}
