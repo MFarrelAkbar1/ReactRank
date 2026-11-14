@@ -17,7 +17,8 @@ A static, HackerRank-style practice site for React (and later PHP). Users read a
 ### Phase 0 findings (verified in Chrome)
 - **`SandpackFileExplorer` ignores `visibleFiles`** and lists every file, including tests, unless it gets `autoHiddenFiles`. With `autoHiddenFiles`, only the files in `visibleFiles` are shown.
 - **React `StrictMode` breaks `SandpackTests`.** Tests initialize, but `run-all-tests` never runs: the spinner shows forever and `onComplete` never fires. Without StrictMode it works. The app root does not use `<StrictMode>`.
-- **Running tests programmatically**: SandpackTests has no imperative API. An external "Run Tests" button remounts `<SandpackTests key={runId} watchMode />`, and watch mode auto-runs every spec on init. A run takes about 5s once warm.
+- **Running tests programmatically**: SandpackTests has no imperative API. The spike remounted `<SandpackTests key={runId} watchMode />`, but that **re-registered a bundler client on every click and re-ran tests on every edit, so the page kept refreshing**. The app replaces it with a custom headless runner (`src/components/useTestRunner.tsx`): one hidden client from `useSandpackClient()`, a `run-all-tests` dispatch on click, and results collected from the Jest `test_end`/`total_test_end` events. A run dispatched during a recompile can be dropped, so it is retried once after 4s.
+- **Mocking globals in tests**: inside Sandpack's runner `global === window`, but `globalThis` is a different object, and bare `fetch()` resolves through `globalThis`. Tests must mock `globalThis.fetch` (plus `global`/`window`). This differs from the prompt's `global.fetch = jest.fn()`.
 - **`onComplete` can fire more than once per run.** Scoring/attempts must dedupe per `runId`.
 - The test runner runs against the current editor state (`updateFile` → re-run reflects the edits).
 

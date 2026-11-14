@@ -66,7 +66,12 @@ function ChallengeWorkspace({ challenge }: { challenge: Challenge }) {
   }, [challenge, resetKey])
 
   const visibleFiles = Object.keys(challenge.starter)
-  const activeFile = visibleFiles.includes('/App.js') ? '/App.js' : visibleFiles[0]
+  const activeFile =
+    challenge.activeFile && visibleFiles.includes(challenge.activeFile)
+      ? challenge.activeFile
+      : visibleFiles.includes('/App.js')
+        ? '/App.js'
+        : visibleFiles[0]
 
   return (
     <SandpackProvider

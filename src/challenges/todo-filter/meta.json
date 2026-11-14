@@ -1,0 +1,9 @@
+{
+  "slug": "todo-filter",
+  "title": "Todo Filter",
+  "difficulty": "Easy",
+  "topics": ["list rendering", "keys", "derived state"],
+  "order": 2,
+  "estimatedMinutes": 20,
+  "language": "react"
+}

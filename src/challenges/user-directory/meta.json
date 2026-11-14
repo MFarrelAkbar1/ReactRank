@@ -1,0 +1,9 @@
+{
+  "slug": "user-directory",
+  "title": "User Directory Fetch",
+  "difficulty": "Medium",
+  "topics": ["useEffect", "async", "loading & error state"],
+  "order": 4,
+  "estimatedMinutes": 30,
+  "language": "react"
+}

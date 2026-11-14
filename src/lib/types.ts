@@ -9,6 +9,8 @@ export interface ChallengeMeta {
   order: number
   estimatedMinutes: number
   language?: Language
+  /** File opened in the editor first (defaults to /App.js). */
+  activeFile?: string
 }
 
 /** Map of Sandpack path (e.g. "/App.js") → file contents. */

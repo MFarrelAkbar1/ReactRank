@@ -1,0 +1,9 @@
+{
+  "slug": "signup-form",
+  "title": "Signup Form Validation",
+  "difficulty": "Medium",
+  "topics": ["controlled inputs", "validation", "forms"],
+  "order": 3,
+  "estimatedMinutes": 30,
+  "language": "react"
+}

@@ -22,6 +22,7 @@ type RunnerStatus = 'booting' | 'ready' | 'running'
 
 const RUN_TIMEOUT_MS = 30_000
 const RETRY_AFTER_MS = 4_000
+const CODE_ERROR_HINT = 'Your code has an error, so the tests could not run. Open the Preview tab to see the full error.'
 
 export function useTestRunner(expectedTotal: number, onFinished: (r: RunResult) => void) {
   const { iframe, listen, dispatch } = useSandpackClient()
@@ -112,7 +113,11 @@ export function useTestRunner(expectedTotal: number, onFinished: (r: RunResult) 
         }
         case 'total_test_end': {
           const reason = fileErrorRef.current ?? lastErrorRef.current ?? 'No tests were executed.'
-          finish(resultsRef.current.size === 0 ? `Tests could not run: ${reason}`.slice(0, 400) : undefined)
+          finish(
+            resultsRef.current.size === 0
+              ? `${CODE_ERROR_HINT}\n\n${reason}`.slice(0, 500)
+              : undefined,
+          )
           break
         }
       }

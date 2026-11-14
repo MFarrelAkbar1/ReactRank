@@ -1,0 +1,14 @@
+{
+  "slug": "product-sorter",
+  "title": "Product Sorter",
+  "difficulty": "Medium",
+  "topics": [
+    "props",
+    "sorting",
+    "immutability"
+  ],
+  "order": 5,
+  "estimatedMinutes": 25,
+  "language": "react",
+  "activeFile": "/components/ProductTable.js"
+}
