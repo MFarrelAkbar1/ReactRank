@@ -1,0 +1,10 @@
+{
+  "slug": "pokemon-details",
+  "title": "Pokemon Details",
+  "difficulty": "Medium",
+  "topics": ["useState", "async", "props", "events"],
+  "order": 6,
+  "estimatedMinutes": 40,
+  "language": "react",
+  "activeFile": "/components/PokemonDetails.js"
+}

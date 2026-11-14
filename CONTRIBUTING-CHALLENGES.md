@@ -45,7 +45,9 @@ src/challenges/<slug>/
 - Give each test a clear, behaviour-focused name ("increments count by step value"). Users only see the test names.
 - Aim for 6–10 tests. The starter should fail most of them, and the solution must pass all of them.
 - Query by `data-testid`, and list every required test id in `README.md`.
-- **Mocking globals (e.g. `fetch`)**: in Sandpack's runner, `global`/`window` and `globalThis` are *different* objects, and a bare `fetch()` call resolves through `globalThis`. Set the mock on all three and restore it afterwards (see `user-directory/tests/App.test.js`).
+- **Mocking globals (e.g. `fetch`, `alert`)**: in Sandpack's runner, `global`/`window` and `globalThis` are *different* objects, and bare `fetch()`/`alert()` calls resolve through `globalThis`. Set the mock on all three and restore it afterwards (see `user-directory/tests/App.test.js`).
+- **Create mocks inside each test, not in `beforeEach`.** Sandpack can register hooks from more than one evaluation of a test file, so a mock created in `beforeEach` may not be the one the component calls (see `pokemon-details/tests/App.test.js`, `setupMocks()`).
+- **Similar file names in the same folder**: Sandpack's resolver can confuse `./Pokemon` with `./PokemonDetails.js`. Import such files with an explicit extension (`./Pokemon.js`).
 
 ## Verify
 
