@@ -1,0 +1,10 @@
+{
+  "slug": "paginated-list",
+  "title": "Paginated List",
+  "difficulty": "Medium",
+  "topics": ["custom hooks", "derived state", "useState"],
+  "order": 9,
+  "estimatedMinutes": 35,
+  "language": "react",
+  "activeFile": "/hooks/usePagination.js"
+}
