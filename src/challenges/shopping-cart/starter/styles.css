@@ -1,0 +1,69 @@
+body {
+  font-family: system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.shop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 720px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+button {
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+.summary {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.coupon {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.coupon input {
+  flex: 1;
+  padding: 0.3rem;
+}
+
+.error {
+  color: #e11d48;
+  font-size: 0.8rem;
+}
+
+.muted {
+  color: #6b7280;
+}

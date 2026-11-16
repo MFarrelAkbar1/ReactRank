@@ -1,0 +1,10 @@
+{
+  "slug": "shopping-cart",
+  "title": "Shopping Cart",
+  "difficulty": "Medium",
+  "topics": ["useReducer", "immutability", "derived state"],
+  "order": 8,
+  "estimatedMinutes": 35,
+  "language": "react",
+  "activeFile": "/cartReducer.js"
+}
