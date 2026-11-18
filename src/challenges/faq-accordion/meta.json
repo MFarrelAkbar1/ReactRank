@@ -1,0 +1,9 @@
+{
+  "slug": "faq-accordion",
+  "title": "FAQ Accordion",
+  "difficulty": "Easy",
+  "topics": ["useState", "conditional rendering", "accessibility"],
+  "order": 11,
+  "estimatedMinutes": 15,
+  "language": "react"
+}
