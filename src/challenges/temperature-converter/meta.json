@@ -1,0 +1,9 @@
+{
+  "slug": "temperature-converter",
+  "title": "Temperature Converter",
+  "difficulty": "Easy",
+  "topics": ["controlled inputs", "single source of truth", "derived state"],
+  "order": 12,
+  "estimatedMinutes": 20,
+  "language": "react"
+}

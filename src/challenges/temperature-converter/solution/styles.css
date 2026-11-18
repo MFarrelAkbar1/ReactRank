@@ -1,0 +1,43 @@
+body {
+  font-family: system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.converter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem;
+  max-width: 24rem;
+}
+
+.converter h1 {
+  width: 100%;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-weight: 600;
+}
+
+input {
+  width: 8rem;
+  padding: 0.4rem;
+  font: inherit;
+  font-weight: normal;
+}
+
+.equals {
+  font-size: 1.5rem;
+  padding-bottom: 0.3rem;
+}
+
+.error {
+  width: 100%;
+  color: #dc2626;
+  margin: 0.25rem 0 0;
+}

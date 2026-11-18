@@ -1,0 +1,48 @@
+body {
+  font-family: system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.faq {
+  width: 24rem;
+}
+
+.item {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  background: #f7f7f7;
+  border: none;
+  cursor: pointer;
+}
+
+.item.open .header {
+  background: #e8f0fe;
+}
+
+.panel {
+  padding: 0.75rem 1rem;
+  color: #333;
+}
+
+.collapse {
+  margin-top: 0.5rem;
+  padding: 0.35rem 1rem;
+  cursor: pointer;
+}
+
+.collapse:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
