@@ -1,0 +1,9 @@
+{
+  "slug": "character-counter",
+  "title": "Character Counter",
+  "difficulty": "Easy",
+  "topics": ["controlled inputs", "derived state", "list rendering"],
+  "order": 10,
+  "estimatedMinutes": 15,
+  "language": "react"
+}
