@@ -1,0 +1,61 @@
+body {
+  font-family: system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.composer {
+  width: 22rem;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  font: inherit;
+  resize: vertical;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.remaining {
+  color: #555;
+  font-variant-numeric: tabular-nums;
+}
+
+.remaining.warning {
+  color: #b45309;
+  font-weight: bold;
+}
+
+.remaining.error {
+  color: #dc2626;
+  font-weight: bold;
+}
+
+button {
+  padding: 0.35rem 1rem;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.posts {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.posts li {
+  border-top: 1px solid #ddd;
+  padding: 0.5rem 0;
+}
