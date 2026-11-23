@@ -99,6 +99,12 @@ function Workspace({ challenge, onReset }: { challenge: Challenge; onReset: () =
   const [leftTab, setLeftTab] = useState<LeftTab>('description')
   const [rightTab, setRightTab] = useState<RightTab>('preview')
   const [confirm, setConfirm] = useState<'reset' | 'reveal' | null>(null)
+  const [filesOpen, setFilesOpen] = useState(() => localStorage.getItem('rr:filesOpen') !== '0')
+  const toggleFiles = () =>
+    setFilesOpen((open) => {
+      localStorage.setItem('rr:filesOpen', open ? '0' : '1')
+      return !open
+    })
 
   const onFinished = useCallback(
     (r: RunResult) => {
@@ -151,10 +157,40 @@ function Workspace({ challenge, onReset }: { challenge: Challenge; onReset: () =
 
   const middle = (
     <div className="flex h-full min-h-0 bg-[#0e141e]">
-      <div className="hidden w-40 shrink-0 overflow-auto border-r border-slate-800 sm:block">
-        <div className="px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500">Files</div>
-        <SandpackFileExplorer autoHiddenFiles style={{ height: 'auto' }} />
-      </div>
+      {filesOpen ? (
+        <div className="hidden w-40 shrink-0 overflow-auto border-r border-slate-800 sm:block">
+          <div className="flex items-center justify-between px-3 py-2">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Files</span>
+            <button
+              type="button"
+              onClick={toggleFiles}
+              title="Collapse files"
+              aria-label="Collapse files"
+              aria-expanded={true}
+              className="rounded px-1 text-slate-500 hover:bg-slate-800 hover:text-slate-200"
+            >
+              «
+            </button>
+          </div>
+          <SandpackFileExplorer autoHiddenFiles style={{ height: 'auto' }} />
+        </div>
+      ) : (
+        <div className="hidden w-7 shrink-0 flex-col items-center border-r border-slate-800 py-2 sm:flex">
+          <button
+            type="button"
+            onClick={toggleFiles}
+            title="Expand files"
+            aria-label="Expand files"
+            aria-expanded={false}
+            className="rounded px-1 text-slate-500 hover:bg-slate-800 hover:text-slate-200"
+          >
+            »
+          </button>
+          <span className="mt-3 text-[11px] font-semibold uppercase tracking-wider text-slate-500 [writing-mode:vertical-rl]">
+            Files
+          </span>
+        </div>
+      )}
       <div className="min-w-0 flex-1">
         <SandpackCodeEditor showTabs showLineNumbers closableTabs={false} style={{ height: '100%' }} />
       </div>
