@@ -39,7 +39,7 @@ export const challenges: Challenge[] = Object.entries(metaFiles)
       expectedTestCount: countTests(tests),
     } satisfies Challenge
   })
-  .sort((a, b) => a.order - b.order || DIFFICULTY_ORDER[a.difficulty] - DIFFICULTY_ORDER[b.difficulty])
+  .sort((a, b) => DIFFICULTY_ORDER[a.difficulty] - DIFFICULTY_ORDER[b.difficulty] || a.order - b.order)
 
 export function getChallenge(slug: string): Challenge | undefined {
   return challenges.find((c) => c.slug === slug)
